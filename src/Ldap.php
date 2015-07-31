@@ -29,7 +29,7 @@ namespace Edvlerblog;
 
 
 use yii\base\Component; //include YII component class
-use adLDAP\adLDAP; //include the adLDAP class
+use Adldap\Adldap; //include the adLDAP class
 
 class Ldap extends Component {
     /**
@@ -52,7 +52,7 @@ class Ldap extends Component {
      */	
     public function init() {
         try {
-            $this->adLdapClass = new adLDAP($this->options);
+            $this->adLdapClass = new Adldap($this->options);
         } catch (adLDAPException $e) {
             throw new CException($e);   
         }		
